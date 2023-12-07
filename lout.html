@@ -1,0 +1,45 @@
+
+<html>
+
+<style>
+
+  a {
+    color: orange;
+  }
+
+</style>
+
+<script src="https://fb--devopsdev.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:testLightningOut';
+    const componentName = 'c:gbgOpportunityCreate';
+    const lightningEndpoint = 'https://fb--devopsdev.sandbox.my.salesforce.com';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
+</html>
